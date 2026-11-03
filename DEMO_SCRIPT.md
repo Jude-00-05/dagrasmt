@@ -61,3 +61,4 @@
      - Edge-delivered Vite frontend + containerized FastAPI backend running on Fluid compute.
      - Unified routing rewrites (`/api/*`, `/health`, `/docs` -> backend container).
      - Bundled historical dataset in `backend/data/raw` for zero-latency serverless cold starts without external storage costs.
+
