@@ -1,0 +1,12 @@
+services:
+  backend:
+    build: ./backend
+    ports: ["8000:8000"]
+    environment: {CORS_ORIGINS: "http://localhost:5173"}
+    volumes: ["./data:/app/data"]
+    healthcheck: {test: ["CMD","python","-c","import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"], interval: 15s, timeout: 5s, retries: 5}
+  frontend:
+    build: ./frontend
+    ports: ["5173:5173"]
+    environment: {VITE_API_BASE_URL: "http://localhost:8000"}
+    depends_on: {backend: {condition: service_healthy}}

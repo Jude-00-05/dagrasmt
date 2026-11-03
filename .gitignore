@@ -1,0 +1,11 @@
+node_modules/
+frontend/dist/
+frontend/tsconfig.tsbuildinfo
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.vercel/
+.andromity/
+.env
+.andromity/
